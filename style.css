@@ -1,0 +1,225 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .flashcard {
+    background: linear-gradient(145deg, #333, #444);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .flashcard .front {
+    background: #2c2c2c;
+}
+
+body.dark-mode .flashcard .back {
+    background: #444;
+}
+
+.creator {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Input Form Styling */
+.input-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.input-form input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-form input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+.input-form button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #28a745, #218838);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.input-form button:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    transform: scale(1.07);
+}
+
+/* Flashcard Container Styling */
+.flashcard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 100fr)); 
+    gap: 20px; 
+    justify-content: start;
+    max-width: 900px;
+    padding: 10px;
+}
+
+/* Flashcard Styling */
+.flashcard {
+    position: relative;
+    width: 500px;
+    height: 190px;
+    border-radius: 15px;
+    text-align: justify;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(145deg, #1e3c72, #2a5298);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.flashcard:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard .front,
+.flashcard .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    transition: background 0.3s ease;
+}
+
+.flashcard .front {
+    background: linear-gradient(135deg, #4e73df, #3757c4);
+}
+
+.flashcard .back {
+    background: linear-gradient(135deg, #e63946, #c62839);
+    transform: rotateY(180deg);
+}
+
+/* Actions Styling */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.actions button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.actions button:hover {
+    transform: scale(1.1);
+}
+
+.actions .edit {
+    background: linear-gradient(135deg, #ffa500, #e59400);
+}
+
+.actions .edit:hover {
+    background: linear-gradient(135deg, #e59400, #d18700);
+}
+
+.actions .delete {
+    background: linear-gradient(135deg, #ff4500, #e03d00);
+}
+
+.actions .delete:hover {
+    background: linear-gradient(135deg, #e03d00, #c63600);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #343a40, #23272b);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+}
+
+#theme-toggle:hover {
+    background: linear-gradient(135deg, #23272b, #1d2124);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .input-form {
+        flex-direction: column;
+    }
+
+    .flashcard-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .flashcard {
+        width: 180px;
+        height: 140px;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Flashcards</h1>
+    <div class="creator">Creator: Raiko Estrada</div> <!-- Added creator name -->
+    <div class="container">
+        <button class="theme-toggle" id="theme-toggle">
+          <span class="icon-dark">🌙</span>
+        </button>
+      </div>
+    <div class="input-form">
+        <input type="text" id="question" placeholder="Enter question" required>
+        <input type="text" id="answer" placeholder="Enter answer" required>
+        <button id="add-flashcard">Add Flashcard</button>
+    </div>
+
+    <div class="flashcard-container" id="flashcard-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
